@@ -1,0 +1,84 @@
+meta_set fHx8fHw=
+macro_create empty -0.147290 0.114784 0.414672
+component_create maths;converters;3float_to_float3 empty.3float_to_float3 -0.026421 -0.042222
+component_create maths;converters;4float_to_float4 empty.4float_to_float4 -0.022830 0.000734
+macro_create empty.empty -0.004190 0.000305 0.100000
+component_create maths;dummies;float_dummy empty.float_dummy -0.190794 -0.023535
+param_set empty.float_dummy float_in -0.04277834668755531300
+component_create renderers;mesh;mesh_dot_render empty.mesh_dot_render 0.046023 0.058564
+param_set empty.mesh_dot_render dot_size 2.00000882148742680000
+component_create mesh;solid;mesh_sphere empty.mesh_sphere 0.004575 0.082943
+param_set empty.mesh_sphere num_sectors 75.00000762939453100000
+param_set empty.mesh_sphere num_stacks 75.00000000000000000000
+component_create maths;oscillators;oscillator empty.oscillator_1_1 -0.111339 0.014244
+param_set empty.oscillator_1_1 amp 5.49293041229248050000
+component_create maths;oscillators;oscillator empty.oscillator_1_1_1 -0.111905 -0.025973
+param_set empty.oscillator_1_1_1 amp 3.01879501342773440000
+component_create maths;oscillators;oscillator empty.oscillator_1_1_1_1 -0.105081 -0.074846
+param_set empty.oscillator_1_1_1_1 amp 1.05336952209472660000
+param_set empty.oscillator_1_1_1_1 phase -0.51127076148986816000
+macro_create empty_1 -0.138235 0.170473 0.414672
+component_create maths;converters;3float_to_float3 empty_1.3float_to_float3 -0.020489 -0.087639
+component_create maths;converters;4float_to_float4 empty_1.4float_to_float4 -0.023977 0.042765
+macro_create empty_1.empty -0.004190 0.000305 0.100000
+component_create maths;dummies;float_dummy empty_1.float_dummy -0.172545 -0.028196
+param_set empty_1.float_dummy float_in -0.04432100057601928700
+component_create maths;oscillators;oscillator empty_1.oscillator_1_1 -0.111339 0.014244
+param_set empty_1.oscillator_1_1 amp 5.49293041229248050000
+component_create maths;oscillators;oscillator empty_1.oscillator_1_1_1 -0.111905 -0.025973
+param_set empty_1.oscillator_1_1_1 amp 3.01879501342773440000
+component_create maths;oscillators;oscillator empty_1.oscillator_1_1_1_1 -0.105081 -0.074846
+param_set empty_1.oscillator_1_1_1_1 amp 1.05336952209472660000
+param_set empty_1.oscillator_1_1_1_1 phase -0.51127076148986816000
+component_create maths;array;float_array_average float_array_average -0.265540 0.039521
+component_create maths;converters;float_to_float3 float_to_float3 -0.232851 0.001437
+component_create sound;input_visualization_listener input_visualization_listener -0.329234 0.036500
+component_create renderers;mesh;mesh_line_render mesh_line_render -0.117403 0.056741
+param_set mesh_line_render each_to_center 1
+component_create mesh;particles;mesh_star mesh_star -0.284306 0.080580
+component_create mesh;modifiers;transforms;mesh_translate_edge_wraparound mesh_translate_edge_wraparound -0.192261 0.048677
+param_set mesh_translate_edge_wraparound edge_min -2.00000000000000000000,-2.00000000000000000000,-2.01196503639221190000
+param_set mesh_translate_edge_wraparound edge_max 0.99999994039535522000,1.00000000000000000000,1.00000000000000000000
+cpp screen0 0.000000 0.000000
+param_set screen0 gamma_correction 1.00000095367431640000
+param_set screen0 clear_color 0.00000000000002926513,0.00000000000000000000,0.00000000000000000001,0.00000070461976520164
+component_create renderers;opengl_modifiers;cameras;target_camera target_camera -0.067760 0.088176
+param_set target_camera upvector 0.00000099999988378840,1.00000000000000000000,0.00000081346189517717
+param_set target_camera fov 90.97367858886718700000
+param_set target_camera perspective_correct 1
+break
+param_alias alias_result_float3:float3 1 empty_1 alias_result_float3 empty_1.3float_to_float3 result_float3
+param_alias alias_render_out:render 1 empty alias_render_out empty.mesh_dot_render render_out
+param_alias alias_result_float3:float3 1 empty alias_result_float3 empty.3float_to_float3 result_float3
+break
+param_connect target_camera render_in empty alias_render_out
+param_connect target_camera render_in mesh_line_render render_out
+param_connect target_camera destination empty_1 alias_result_float3
+param_connect target_camera position empty alias_result_float3
+param_connect screen0 screen target_camera render_out
+param_connect mesh_translate_edge_wraparound translation float_to_float3 result_float3
+param_connect mesh_translate_edge_wraparound mesh_in mesh_star mesh
+param_connect mesh_line_render mesh_in mesh_translate_edge_wraparound mesh_out
+param_connect float_to_float3 param1 float_array_average result_float
+param_connect float_array_average end input_visualization_listener vu_r
+param_connect float_array_average start input_visualization_listener vu_l
+param_connect empty_1.oscillator_1_1_1_1 freq empty_1.float_dummy result_float
+param_connect empty_1.oscillator_1_1_1 freq empty_1.float_dummy result_float
+param_connect empty_1.oscillator_1_1 freq empty_1.float_dummy result_float
+param_connect empty_1.4float_to_float4 floatc empty_1.oscillator_1_1_1_1 float
+param_connect empty_1.4float_to_float4 floatb empty_1.oscillator_1_1_1 float
+param_connect empty_1.4float_to_float4 floata empty_1.oscillator_1_1 float
+param_connect empty_1.3float_to_float3 floatc empty_1.oscillator_1_1 float
+param_connect empty_1.3float_to_float3 floatb empty_1.oscillator_1_1_1 float
+param_connect empty_1.3float_to_float3 floata empty_1.oscillator_1_1_1_1 float
+param_connect empty.oscillator_1_1_1_1 freq empty.float_dummy result_float
+param_connect empty.oscillator_1_1_1 freq empty.float_dummy result_float
+param_connect empty.oscillator_1_1 freq empty.float_dummy result_float
+param_connect empty.mesh_dot_render base_color empty.4float_to_float4 result_float4
+param_connect empty.mesh_dot_render mesh_in empty.mesh_sphere mesh
+param_connect empty.4float_to_float4 floatc empty.oscillator_1_1_1_1 float
+param_connect empty.4float_to_float4 floatb empty.oscillator_1_1_1 float
+param_connect empty.4float_to_float4 floata empty.oscillator_1_1 float
+param_connect empty.3float_to_float3 floatc empty.oscillator_1_1 float
+param_connect empty.3float_to_float3 floatb empty.oscillator_1_1_1 float
+param_connect empty.3float_to_float3 floata empty.oscillator_1_1_1_1 float

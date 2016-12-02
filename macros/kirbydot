@@ -1,0 +1,46 @@
+macro_create $$name 0.743695
+component_create maths;converters;4float_to_float4 $$name.4float_to_float4 -0.145882 0.111901
+param_set $$name.4float_to_float4 floata -4.81241941452026370000
+component_create particlesystems;generators;basic_spray_emitter $$name.basic_spray_emitter -0.064283 0.104472
+param_set $$name.basic_spray_emitter num_particles 199.99998474121094000000
+component_create renderers;opengl_modifiers;blend_mode $$name.blend_mode 0.119886 0.054974
+param_set $$name.blend_mode dest_blend 6
+component_create texture;particles;blob $$name.blob -0.038090 -0.043650
+param_set $$name.blob arms 0.99999952316284180000
+param_set $$name.blob attenuation 2.22798466682434080000
+param_set $$name.blob size 5
+component_create sound;input_visualization_listener $$name.input_visualization_listener -0.161054 0.040418
+param_set $$name.input_visualization_listener quality 1
+component_create renderers;opengl_modifiers;cameras;orbit_camera $$name.orbit_camera 0.232690 0.183004
+param_set $$name.orbit_camera rotation 0.50012755393981934000,0.50012755393981934000,0.50012755393981934000
+param_set $$name.orbit_camera distance 0.52178090810775757000
+component_create maths;oscillators;oscillator $$name.oscillator -0.250769 0.134408
+param_set $$name.oscillator amp 5.49998998641967770000
+component_create maths;oscillators;oscillator $$name.oscillator_1 -0.232043 0.100912
+param_set $$name.oscillator_1 amp 6.99999141693115230000
+component_create maths;arithmetics;binary;round $$name.round -0.224318 0.064111
+component_create renderers;particlesystems;simple $$name.simple -0.063063 -0.087336
+param_set $$name.simple size_lifespan_type 1
+param_set $$name.simple size_lifespan_sequence 0.462610;1.000000;MC4wMTM5MDI=|0.533950;2.000000;MS4wMTEwOTE=|1.000000;0.000000;LTAuMDAxODAy
+param_set $$name.simple alpha_lifespan_sequence 0.500000;2.000000;MC4wMDkwMDU=|0.496374;1.000000;MS4wMDAwMDA=|0.003626;0.000000;MC4wMTgwNTA=
+param_set $$name.simple r_lifespan_sequence 0.500000;0.000000;MS4wMDAwMDA=|0.500000;0.000000;MS4wMDAwMDA=
+param_set $$name.simple g_lifespan_sequence 0.500000;0.000000;MS4wMDAwMDA=|0.500000;0.000000;MS4wMDAwMDA=
+param_set $$name.simple b_lifespan_sequence 0.500000;0.000000;MS4wMDAwMDA=|0.500000;0.000000;MS4wMDAwMDA=
+ps64 $$name.simple fragment_program dW5pZm9ybSBzYW1wbGVyMkQgX3RleDsKdmFyeWluZyBmbG9hdCBwYXJ0aWNsZV9hbHBoYTsKdmFyeWluZyB2ZWMzIHBhcnRpY2xlX2NvbG9yOwp2b2lkIG1haW4odm9pZCkKewp2ZWMyIGxfdXY9Z2xfUG9pbnRDb29yZDsKY29uc3QgdmVjMiBsX29mZnNldCA9IHZlYzIoMC41LDAuNSk7CmxfdXYtPWxfb2Zmc2V0OwpsX3V2PXZlYzIodmVjNChsX3V2LDAuMCwxLjApKTsKbF91dis9bF9vZmZzZXQ7CnZlYzQgYSA9IHRleHR1cmUyRChfdGV4LCBsX3V2KTsKZ2xfRnJhZ0NvbG9yID0gdmVjNChhLnIgKiBwYXJ0aWNsZV9jb2xvci5yLCBhLmcgKiBwYXJ0aWNsZV9jb2xvci5nLCBhLmIgKiBwYXJ0aWNsZV9jb2xvci5iLCBhLmEgKiBwYXJ0aWNsZV9hbHBoYSk7Cn0K
+ps64 $$name.simple vertex_program YXR0cmlidXRlIGZsb2F0IF9zOwphdHRyaWJ1dGUgZmxvYXQgX2E7CmF0dHJpYnV0ZSB2ZWMzICBfYzsKdW5pZm9ybSBmbG9hdCBfdng7CnZhcnlpbmcgZmxvYXQgcGFydGljbGVfYWxwaGE7CnZhcnlpbmcgdmVjMyBwYXJ0aWNsZV9jb2xvcjsKCnZvaWQgbWFpbih2b2lkKQp7CiAgcGFydGljbGVfYWxwaGEgPSBfYTsKICBwYXJ0aWNsZV9jb2xvciA9IF9jOwogIGdsX1Bvc2l0aW9uID0gZnRyYW5zZm9ybSgpOwogIGZsb2F0IHZlcnREaXN0ID0gZGlzdGFuY2UodmVjMyhnbF9Qb3NpdGlvbi54LGdsX1Bvc2l0aW9uLnksZ2xfUG9zaXRpb24ueiksIHZlYzMoMC4wLDAuMCwwLjApKTsKICBmbG9hdCBkaXN0X2FscGhhOwogIGRpc3RfYWxwaGEgPSBwb3coMSAvIHZlcnREaXN0LDEuMSk7CiAgZ2xfUG9pbnRTaXplID0gX3Z4ICogMC4xNTUgKiBkaXN0X2FscGhhICogX3M7CiAgaWYgKGdsX1BvaW50U2l6ZSA8IDEuMCkgcGFydGljbGVfYWxwaGEgPSBnbF9Qb2ludFNpemU7Cn0=
+component_create renderers;particlesystems;sparks $$name.sparks 0.015585 0.103283
+param_set $$name.sparks proximity_level 1.10505080223083500000
+param_alias alias_render_out:render 1 $$name alias_render_out $$name.orbit_camera render_out
+param_connect $$name.sparks float_array_in $$name.input_visualization_listener wave
+param_connect $$name.sparks particlesystem $$name.basic_spray_emitter particlesystem
+param_connect $$name.simple texture $$name.blob texture
+param_connect $$name.simple particlesystem $$name.basic_spray_emitter particlesystem
+param_alias alias_param1:float -1 $$name alias_param1 $$name.round param1
+param_connect $$name.orbit_camera render_in $$name.blend_mode render_out
+param_connect $$name.input_visualization_listener multiplier $$name.round result
+param_connect $$name.blend_mode render_in $$name.simple render_out
+param_connect $$name.blend_mode render_in $$name.sparks render_out
+param_connect $$name.basic_spray_emitter particles_per_second $$name.input_visualization_listener vu_l
+param_connect $$name.basic_spray_emitter color $$name.4float_to_float4 result_float4
+param_connect $$name.4float_to_float4 floatc $$name.oscillator_1 float
+param_connect $$name.4float_to_float4 floatb $$name.oscillator float

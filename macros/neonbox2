@@ -1,0 +1,98 @@
+macro_create $$name 1.048089
+component_create maths;converters;4float_to_float4 $$name.4float_to_float4 -0.317458 0.257383
+component_create maths;converters;4float_to_float4 $$name.4float_to_float4_1 -0.317611 0.188369
+component_create renderers;opengl_modifiers;blend_mode $$name.blend_mode 0.390318 -0.062626
+param_set $$name.blend_mode dest_blend 6
+param_set $$name.blend_mode blend_color 0.99999916553497314000,1.00000000000000000000,1.00000000000000000000,1.00000000000000000000
+component_create renderers;basic;colored_rectangle $$name.colored_rectangle 0.302442 0.173528
+param_set $$name.colored_rectangle position 0.00000092128095730004,0.00000000000000000000,0.00000000000000000000
+param_set $$name.colored_rectangle size 0.90973007678985596000,0.90973085165023804000,4.99998998641967770000
+param_set $$name.colored_rectangle border_enable 1
+param_set $$name.colored_rectangle color 0.99778103828430176000,1.00000000000000000000,1.00000000000000000000,0.00000086944675103950
+component_create renderers;basic;colored_rectangle $$name.colored_rectangle_1 0.296156 0.104900
+param_set $$name.colored_rectangle_1 position 0.00000092128095730004,0.00000000000000000000,0.00000000000000000000
+param_set $$name.colored_rectangle_1 size 0.80764883756637573000,0.80412399768829346000,0.00000000000000000000
+param_set $$name.colored_rectangle_1 border_enable 1
+param_set $$name.colored_rectangle_1 color 1.00000000000000000000,1.00000000000000000000,1.00000000000000000000,0.00000076640111501547
+component_create renderers;basic;colored_rectangle $$name.colored_rectangle_2 0.301384 -0.274219
+param_set $$name.colored_rectangle_2 position 0.00000092128095730004,0.00000000000000000000,0.00000000000000000000
+param_set $$name.colored_rectangle_2 size 0.22491994500160217000,0.21170300245285034000,0.00000000000000000000
+param_set $$name.colored_rectangle_2 border_enable 1
+param_set $$name.colored_rectangle_2 color 1.00000000000000000000,1.00000000000000000000,1.00000000000000000000,0.00000076640111501547
+component_create renderers;basic;colored_rectangle $$name.colored_rectangle_3 0.295440 0.037889
+param_set $$name.colored_rectangle_3 position 0.00000092128095730004,0.00000000000000000000,0.00000000000000000000
+param_set $$name.colored_rectangle_3 size 0.69615584611892700000,0.70320308208465576000,0.00000000000000000000
+param_set $$name.colored_rectangle_3 border_enable 1
+param_set $$name.colored_rectangle_3 color 0.55746245384216309000,0.15540491044521332000,0.15540491044521332000,0.00000099999977010157
+component_create renderers;basic;colored_rectangle $$name.colored_rectangle_4 0.295785 -0.021525
+param_set $$name.colored_rectangle_4 position 0.00000092128095730004,0.00000000000000000000,0.00000000000000000000
+param_set $$name.colored_rectangle_4 size 0.59170997142791748000,0.59171056747436523000,0.00000000000000000000
+param_set $$name.colored_rectangle_4 border_enable 1
+param_set $$name.colored_rectangle_4 color 1.00000000000000000000,1.00000000000000000000,1.00000000000000000000,0.00000076640111501547
+component_create renderers;basic;colored_rectangle $$name.colored_rectangle_5 0.296515 -0.084533
+param_set $$name.colored_rectangle_5 position 0.00000092128095730004,0.00000000000000000000,0.00000000000000000000
+param_set $$name.colored_rectangle_5 size 0.50155705213546753000,0.50155794620513916000,0.00000000000000000000
+param_set $$name.colored_rectangle_5 border_enable 1
+param_set $$name.colored_rectangle_5 color 1.00000000000000000000,1.00000000000000000000,1.00000000000000000000,0.00000092352587444111
+component_create renderers;basic;colored_rectangle $$name.colored_rectangle_6 0.298925 -0.144580
+param_set $$name.colored_rectangle_6 position 0.00000092128095730004,0.00000000000000000000,0.00000000000000000000
+param_set $$name.colored_rectangle_6 size 0.40030300617218018000,0.40735197067260742000,0.00000000000000000000
+param_set $$name.colored_rectangle_6 border_enable 1
+param_set $$name.colored_rectangle_6 color 0.16928274929523468000,0.03781285881996154800,0.03781285881996154800,0.00000099999988378840
+component_create renderers;basic;colored_rectangle $$name.colored_rectangle_7 0.297935 -0.198113
+param_set $$name.colored_rectangle_7 position 0.00000092128095730004,0.00000000000000000000,0.00000000000000000000
+param_set $$name.colored_rectangle_7 size 0.30776700377464294000,0.30776610970497131000,0.00000000000000000000
+param_set $$name.colored_rectangle_7 border_enable 1
+param_set $$name.colored_rectangle_7 color 1.00000000000000000000,1.00000000000000000000,1.00000000000000000000,0.00000076640111501547
+component_create maths;dummies;float_dummy $$name.float_dummy -0.152647 -0.228817
+param_set $$name.float_dummy float_in 4.99998998641967770000
+component_create sound;input_visualization_listener $$name.input_visualization_listener -0.245277 -0.049957
+param_set $$name.input_visualization_listener multiplier 499.99993896484375000000
+component_create maths;oscillators;pulse_oscillator $$name.pulse_oscillator_1 -0.439000 0.271567
+param_set $$name.pulse_oscillator_1 trigger 0.50006556510925293000
+param_set $$name.pulse_oscillator_1 fade_speed 0.59999936819076538000
+component_create maths;oscillators;pulse_oscillator $$name.pulse_oscillator_1_1 -0.442913 0.225950
+param_set $$name.pulse_oscillator_1_1 trigger 0.50006556510925293000
+param_set $$name.pulse_oscillator_1_1 fade_speed 0.69999724626541138000
+component_create maths;oscillators;pulse_oscillator $$name.pulse_oscillator_1_1_1 -0.445734 0.179917
+param_set $$name.pulse_oscillator_1_1_1 trigger 0.50006556510925293000
+param_set $$name.pulse_oscillator_1_1_1 fade_speed 0.79999923706054688000
+param_alias alias_render_out:render 1 $$name alias_render_out $$name.blend_mode render_out
+param_connect $$name.colored_rectangle_7 border_color $$name.4float_to_float4_1 result_float4
+param_connect $$name.colored_rectangle_7 border_width $$name.input_visualization_listener octaves_l_6
+param_connect $$name.colored_rectangle_7 angle $$name.float_dummy result_float
+param_connect $$name.colored_rectangle_6 border_color $$name.4float_to_float4 result_float4
+param_connect $$name.colored_rectangle_6 border_width $$name.input_visualization_listener octaves_r_5
+param_connect $$name.colored_rectangle_6 angle $$name.float_dummy result_float
+param_connect $$name.colored_rectangle_5 border_color $$name.4float_to_float4_1 result_float4
+param_connect $$name.colored_rectangle_5 border_width $$name.input_visualization_listener octaves_l_4
+param_connect $$name.colored_rectangle_5 angle $$name.float_dummy result_float
+param_connect $$name.colored_rectangle_4 border_color $$name.4float_to_float4_1 result_float4
+param_connect $$name.colored_rectangle_4 border_width $$name.input_visualization_listener octaves_r_3
+param_connect $$name.colored_rectangle_4 angle $$name.float_dummy result_float
+param_connect $$name.colored_rectangle_3 border_color $$name.4float_to_float4 result_float4
+param_connect $$name.colored_rectangle_3 border_width $$name.input_visualization_listener octaves_l_2
+param_connect $$name.colored_rectangle_3 angle $$name.float_dummy result_float
+param_connect $$name.colored_rectangle_2 border_color $$name.4float_to_float4 result_float4
+param_connect $$name.colored_rectangle_2 border_width $$name.input_visualization_listener octaves_r_7
+param_connect $$name.colored_rectangle_2 angle $$name.float_dummy result_float
+param_connect $$name.colored_rectangle_1 border_color $$name.4float_to_float4_1 result_float4
+param_connect $$name.colored_rectangle_1 border_width $$name.input_visualization_listener octaves_r_1
+param_connect $$name.colored_rectangle_1 angle $$name.float_dummy result_float
+param_connect $$name.colored_rectangle border_color $$name.4float_to_float4 result_float4
+param_connect $$name.colored_rectangle border_width $$name.input_visualization_listener octaves_l_0
+param_connect $$name.colored_rectangle angle $$name.float_dummy result_float
+param_connect $$name.blend_mode render_in $$name.colored_rectangle render_out
+param_connect $$name.blend_mode render_in $$name.colored_rectangle_2 render_out
+param_connect $$name.blend_mode render_in $$name.colored_rectangle_1 render_out
+param_connect $$name.blend_mode render_in $$name.colored_rectangle_3 render_out
+param_connect $$name.blend_mode render_in $$name.colored_rectangle_4 render_out
+param_connect $$name.blend_mode render_in $$name.colored_rectangle_5 render_out
+param_connect $$name.blend_mode render_in $$name.colored_rectangle_6 render_out
+param_connect $$name.blend_mode render_in $$name.colored_rectangle_7 render_out
+param_connect $$name.4float_to_float4_1 floatc $$name.pulse_oscillator_1_1 result1
+param_connect $$name.4float_to_float4_1 floatb $$name.pulse_oscillator_1 result1
+param_connect $$name.4float_to_float4_1 floata $$name.pulse_oscillator_1_1_1 result1
+param_connect $$name.4float_to_float4 floatc $$name.pulse_oscillator_1_1_1 result1
+param_connect $$name.4float_to_float4 floatb $$name.pulse_oscillator_1_1 result1
+param_connect $$name.4float_to_float4 floata $$name.pulse_oscillator_1 result1

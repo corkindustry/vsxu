@@ -1,0 +1,58 @@
+meta_set fHx8fHw=
+component_create maths;converters;3float_to_float3 3float_to_float3 -0.393113 0.033256
+param_set 3float_to_float3 floatb -0.00342746963724493980
+component_create renderers;opengl_modifiers;blend_mode blend_mode 0.030705 0.061323
+component_create renderers;opengl_modifiers;depth_buffer depth_buffer -0.076280 0.060747
+param_set depth_buffer depth_test 1
+param_set depth_buffer depth_mask 1
+component_create renderers;opengl_modifiers;depth_buffer depth_buffer_1 -0.112471 0.147059
+param_set depth_buffer_1 depth_test 1
+param_set depth_buffer_1 depth_mask 1
+component_create sound;input_visualization_listener input_visualization_listener -0.555782 -0.118167
+param_set input_visualization_listener multiplier -0.22696521878242493000
+component_create renderers;opengl_modifiers;light_directional light_directional -0.033907 0.131442
+param_set light_directional enabled 1
+param_set light_directional ambient_color 0.89526885747909546000,0.03172894194722175600,0.03172894194722175600,1.00000000000000000000
+param_set light_directional diffuse_color 0.69214057922363281000,0.54679483175277710000,0.54679483175277710000,1.00000000000000000000
+component_create renderers;opengl_modifiers;light_directional light_directional_1 -0.031633 0.063532
+param_set light_directional_1 enabled 1
+param_set light_directional_1 ambient_color 0.03172900155186653100,0.03690896183252334600,0.89526897668838501000,1.00000000000000000000
+param_set light_directional_1 diffuse_color 0.58236891031265259000,0.54679501056671143000,0.69214093685150146000,1.00000000000000000000
+component_create renderers;mesh;mesh_basic_render mesh_basic_render -0.254282 0.048581
+component_create renderers;mesh;mesh_basic_render mesh_basic_render_1 -0.262222 0.146804
+component_create mesh;modifiers;deformers;mesh_noise mesh_noise -0.332789 0.059400
+component_create mesh;solid;metaballs metaballs -0.498734 0.127981
+param_set metaballs grid_size 50.00001144409179700000
+component_create renderers;opengl_modifiers;cameras;orbit_camera orbit_camera 0.087759 0.030521
+param_set orbit_camera rotation 0.51829892396926880000,0.90093195438385010000,0.35886698961257935000
+param_set orbit_camera distance 1.07772481441497800000
+param_set orbit_camera perspective_correct 1
+component_create renderers;opengl_modifiers;rendering_mode rendering_mode -0.139922 0.028786
+param_set rendering_mode front_facing 1
+param_set rendering_mode back_facing 1
+param_set rendering_mode smooth_edges 1
+component_create renderers;opengl_modifiers;rendering_mode rendering_mode_1 -0.169368 0.141961
+param_set rendering_mode_1 front_facing 1
+param_set rendering_mode_1 back_facing 1
+param_set rendering_mode_1 smooth_edges 1
+cpp screen0 0.148203 0.038759
+param_set screen0 gamma_correction 1.00000095367431640000
+param_set screen0 clear_color 0.00000046420717580986,0.00000077531802844533,0.00000096349174327770,1.00000000000000000000
+break
+break
+param_connect screen0 screen orbit_camera render_out
+param_connect rendering_mode_1 render_in mesh_basic_render_1 render_out
+param_connect rendering_mode render_in mesh_basic_render render_out
+param_connect orbit_camera render_in blend_mode render_out
+param_connect mesh_noise noise_amount 3float_to_float3 result_float3
+param_connect mesh_noise mesh_in metaballs mesh
+param_connect mesh_basic_render_1 mesh_in metaballs mesh
+param_connect mesh_basic_render mesh_in mesh_noise mesh_out
+param_connect light_directional_1 render_in depth_buffer render_out
+param_connect light_directional render_in depth_buffer_1 render_out
+param_connect depth_buffer_1 render_in rendering_mode_1 render_out
+param_connect depth_buffer render_in rendering_mode render_out
+param_connect blend_mode render_in light_directional render_out
+param_connect blend_mode render_in light_directional_1 render_out
+param_connect 3float_to_float3 floatc input_visualization_listener vu_r
+param_connect 3float_to_float3 floata input_visualization_listener vu_l

@@ -1,0 +1,52 @@
+meta_set fHx8fHw=
+component_create maths;converters;3float_to_float3 3float_to_float3 -0.393113 0.033256
+param_set 3float_to_float3 floatb -0.00342746963724493980
+component_create maths;converters;3float_to_float3 3float_to_float3_1 0.028511 -0.032840
+param_set 3float_to_float3_1 floata 4.87043380737304690000
+param_set 3float_to_float3_1 floatb 4.04754257202148440000
+component_create renderers;opengl_modifiers;blend_mode blend_mode 0.030705 0.061323
+component_create renderers;opengl_modifiers;depth_buffer depth_buffer -0.076280 0.060747
+param_set depth_buffer depth_test 1
+param_set depth_buffer depth_mask 1
+component_create sound;input_visualization_listener input_visualization_listener -0.555782 -0.118167
+param_set input_visualization_listener multiplier 9.99999141693115230000
+component_create renderers;opengl_modifiers;light_directional light_directional_1 -0.031633 0.063532
+param_set light_directional_1 enabled 1
+param_set light_directional_1 position 0.00000000000000000000,0.25499996542930603000,1.00000000000000000000
+param_set light_directional_1 ambient_color 0.03172900155186653100,0.03690896183252334600,0.89526897668838501000,1.00000000000000000000
+param_set light_directional_1 diffuse_color 0.71211659908294678000,0.09979708492755889900,0.29736292362213135000,1.00000000000000000000
+component_create renderers;mesh;mesh_basic_render mesh_basic_render -0.254282 0.048581
+component_create mesh;modifiers;deformers;mesh_noise mesh_noise -0.352076 0.060055
+component_create mesh;solid;mesh_sphere mesh_sphere -0.445585 0.117389
+param_set mesh_sphere num_sectors 32.14199066162109400000
+param_set mesh_sphere num_stacks 19.73114013671875000000
+component_create mesh;solid;mesh_sphere_icosahedron mesh_sphere_icosahedron -0.423057 0.079044
+param_set mesh_sphere_icosahedron subdivision_level 4.52155923843383790000
+param_set mesh_sphere_icosahedron max_normalization_level 7.02060413360595700000
+param_set mesh_sphere_icosahedron initial_ico_scale 0.96291130781173706000
+component_create renderers;opengl_modifiers;cameras;orbit_camera orbit_camera 0.087759 0.030521
+param_set orbit_camera perspective_correct 1
+component_create maths;oscillators;oscillator oscillator -0.076795 -0.011708
+param_set oscillator amp 6.09697532653808590000
+param_set oscillator freq 0.00901791173964738850
+component_create renderers;opengl_modifiers;rendering_mode rendering_mode -0.139922 0.028786
+param_set rendering_mode smooth_edges 1
+cpp screen0 0.148203 0.038759
+param_set screen0 gamma_correction 1.00000095367431640000
+param_set screen0 clear_color 0.00000046420717580986,0.00000077531802844533,0.00000096349174327770,1.00000000000000000000
+break
+break
+param_connect screen0 screen orbit_camera render_out
+param_connect rendering_mode render_in mesh_basic_render render_out
+param_connect orbit_camera render_in blend_mode render_out
+param_connect orbit_camera distance oscillator float
+param_connect orbit_camera rotation 3float_to_float3_1 result_float3
+param_connect mesh_noise noise_amount 3float_to_float3 result_float3
+param_connect mesh_noise mesh_in mesh_sphere_icosahedron mesh
+param_connect mesh_basic_render mesh_in mesh_noise mesh_out
+param_connect light_directional_1 render_in depth_buffer render_out
+param_connect depth_buffer render_in rendering_mode render_out
+param_connect blend_mode render_in light_directional_1 render_out
+param_connect 3float_to_float3_1 floatc oscillator float
+param_connect 3float_to_float3 floatc input_visualization_listener vu_r
+param_connect 3float_to_float3 floata input_visualization_listener vu_l

@@ -1,0 +1,55 @@
+meta_set fHx8fHw=
+component_create maths;converters;3float_to_float3 3float_to_float3 -0.339332 0.061806
+component_create maths;converters;3float_to_float3 3float_to_float3_1 -0.346883 -0.044968
+component_create maths;converters;3float_to_float3 3float_to_float3_2 -0.334078 0.011246
+component_create maths;converters;3float_to_float3 3float_to_float3_3 -0.179449 -0.098317
+param_set 3float_to_float3_3 floata 0.05421057343482971200
+param_set 3float_to_float3_3 floatb 0.52557796239852905000
+param_set 3float_to_float3_3 floatc 0.91958737373352051000
+component_create renderers;opengl_modifiers;blend_mode blend_mode 0.007401 -0.001938
+param_set blend_mode dest_blend 6
+component_create renderers;opengl_modifiers;cameras;freelook_camera freelook_camera -0.058864 0.033249
+param_set freelook_camera position 1.00000000000000000000,0.03627000004053115800,0.91495442390441895000
+param_set freelook_camera rotation 0.59044003486633301000,-1.10441017150878910000,0.00000084541932210414
+param_set freelook_camera upvector 0.99999928474426270000,1.00000000000000000000,0.00000000000000860336
+component_create renderers;opengl_modifiers;cameras;freelook_camera freelook_camera_1 -0.076018 -0.085215
+param_set freelook_camera_1 position 1.00000000000000000000,0.00000000000000000000,0.72641801834106445000
+param_set freelook_camera_1 rotation 0.99999916553497314000,1.00000000000000000000,0.00000000000000000000
+param_set freelook_camera_1 upvector 0.99999928474426270000,1.00000000000000000000,0.00000000000000860336
+component_create sound;input_visualization_listener input_visualization_listener -0.548602 -0.000128
+param_set input_visualization_listener quality 1
+param_set input_visualization_listener multiplier 1.00000870227813720000
+component_create renderers;mesh;mesh_line_render mesh_line_render -0.111983 0.054265
+param_set mesh_line_render line_width 20.00000000000000000000
+param_set mesh_line_render each_to_center 1
+component_create mesh;particles;mesh_star mesh_star -0.331012 0.188666
+component_create mesh;modifiers;transforms;mesh_translate_edge_wraparound mesh_translate_edge_wraparound -0.192261 0.048677
+param_set mesh_translate_edge_wraparound edge_max 1.00000000000000000000,-0.04866500571370124800,1.00000000000000000000
+component_create maths;oscillators;pulse_oscillator pulse_oscillator -0.264663 -0.107888
+param_set pulse_oscillator trigger 0.99647837877273560000
+component_create maths;oscillators;pulse_oscillator pulse_oscillator_1 -0.262727 -0.139213
+param_set pulse_oscillator_1 trigger 1.49999046325683590000
+component_create maths;oscillators;pulse_oscillator pulse_oscillator_1_1 -0.262048 -0.166003
+param_set pulse_oscillator_1_1 trigger 1.99999141693115230000
+cpp screen0 0.060433 -0.003066
+param_set screen0 gamma_correction 1.00000095367431640000
+param_set screen0 clear_color 0.00000000000002926513,0.00000000000000000000,0.00000000000000000001,0.00000070461976520164
+break
+break
+param_connect screen0 screen blend_mode render_out
+param_connect mesh_translate_edge_wraparound edge_min 3float_to_float3_2 result_float3
+param_connect mesh_translate_edge_wraparound translation 3float_to_float3_1 result_float3
+param_connect mesh_translate_edge_wraparound mesh_in mesh_star mesh
+param_connect mesh_line_render mesh_in mesh_translate_edge_wraparound mesh_out
+param_connect freelook_camera_1 render_in mesh_line_render render_out
+param_connect freelook_camera render_in mesh_line_render render_out
+param_connect blend_mode render_in freelook_camera_1 render_out
+param_connect 3float_to_float3_2 floatc input_visualization_listener octaves_l_7
+param_connect 3float_to_float3_2 floatb input_visualization_listener octaves_r_4
+param_connect 3float_to_float3_2 floata input_visualization_listener octaves_l_1
+param_connect 3float_to_float3_1 floatc input_visualization_listener octaves_l_6
+param_connect 3float_to_float3_1 floatb input_visualization_listener octaves_r_5
+param_connect 3float_to_float3_1 floata input_visualization_listener octaves_l_2
+param_connect 3float_to_float3 floatc input_visualization_listener octaves_r_6
+param_connect 3float_to_float3 floatb input_visualization_listener octaves_r_3
+param_connect 3float_to_float3 floata input_visualization_listener octaves_l_0

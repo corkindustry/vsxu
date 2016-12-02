@@ -1,0 +1,18 @@
+macro_create $$name 0.100000
+component_create maths;converters;4float_to_float4 $$name.4float_to_float4_1 0.022734 0.014860
+component_create maths;oscillators;pulse_oscillator $$name.pulse_oscillator -0.026006 0.028719
+param_set $$name.pulse_oscillator trigger 9.99999046325683590000
+param_set $$name.pulse_oscillator fade_speed 0.01001070067286491400
+component_create maths;oscillators;pulse_oscillator $$name.pulse_oscillator_1 -0.023798 -0.001131
+param_set $$name.pulse_oscillator_1 trigger 9.99999046325683590000
+param_set $$name.pulse_oscillator_1 fade_speed 0.02001034095883369400
+component_create maths;oscillators;pulse_oscillator $$name.pulse_oscillator_1_1 -0.016632 -0.022631
+param_set $$name.pulse_oscillator_1_1 trigger 9.99999046325683590000
+param_set $$name.pulse_oscillator_1_1 fade_speed 0.03001067973673343700
+param_alias alias_result1_2:float 1 $$name alias_result1_2 $$name.pulse_oscillator_1_1 result1
+param_alias alias_result1_1:float 1 $$name alias_result1_1 $$name.pulse_oscillator_1 result1
+param_alias alias_result1:float 1 $$name alias_result1 $$name.pulse_oscillator result1
+param_alias alias_result_float4:float4 1 $$name alias_result_float4 $$name.4float_to_float4_1 result_float4
+param_connect $$name.4float_to_float4_1 floatc $$name.pulse_oscillator_1_1 result1
+param_connect $$name.4float_to_float4_1 floatb $$name.pulse_oscillator_1 result1
+param_connect $$name.4float_to_float4_1 floata $$name.pulse_oscillator result1

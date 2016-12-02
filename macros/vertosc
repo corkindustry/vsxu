@@ -1,0 +1,17 @@
+macro_create $$name 0.302959
+component_create maths;converters;4float_to_float4 $$name.4float_to_float4 0.026726 0.052777
+component_create maths;dummies;float_dummy $$name.float_dummy -0.088687 0.032212
+param_set $$name.float_dummy float_in 0.99999147653579712000
+component_create sound;input_visualization_listener $$name.input_visualization_listener -0.090595 -0.030855
+param_set $$name.input_visualization_listener multiplier 19.99999046325683600000
+component_create renderers;oscilloscopes;simple_oscilloscope $$name.simple_oscilloscope 0.092270 0.000473
+param_set $$name.simple_oscilloscope position 0.00000000000000000000,0.00000059938093954770,0.00000000000000000000
+param_set $$name.simple_oscilloscope size 1.00000000000000000000,1.00000000000000000000,0.99999910593032837000
+param_set $$name.simple_oscilloscope angle -0.50000995397567749000
+param_alias alias_render_out:render 1 $$name alias_render_out $$name.simple_oscilloscope render_out
+param_connect $$name.simple_oscilloscope color $$name.4float_to_float4 result_float4
+param_connect $$name.simple_oscilloscope data_in $$name.input_visualization_listener wave
+param_connect $$name.4float_to_float4 floatd $$name.float_dummy result_float
+param_connect $$name.4float_to_float4 floatc $$name.input_visualization_listener octaves_r_0
+param_connect $$name.4float_to_float4 floatb $$name.input_visualization_listener octaves_l_0
+param_connect $$name.4float_to_float4 floata $$name.float_dummy result_float

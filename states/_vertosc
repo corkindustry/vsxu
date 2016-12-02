@@ -1,0 +1,20 @@
+meta_set fHx8fHw=
+component_create maths;converters;4float_to_float4 4float_to_float4 -0.130094 0.012718
+component_create maths;dummies;float_dummy float_dummy -0.245212 -0.007710
+param_set float_dummy float_in 0.99999147653579712000
+component_create sound;input_visualization_listener input_visualization_listener -0.247251 -0.070835
+param_set input_visualization_listener multiplier 19.99999046325683600000
+cpp screen0 0.000000 0.000000
+component_create renderers;oscilloscopes;simple_oscilloscope simple_oscilloscope -0.064550 -0.039586
+param_set simple_oscilloscope position 0.00000000000000000000,0.00000059938093954770,0.00000000000000000000
+param_set simple_oscilloscope size 1.00000000000000000000,1.00000000000000000000,0.99999910593032837000
+param_set simple_oscilloscope angle -0.50000995397567749000
+break
+break
+param_connect simple_oscilloscope color 4float_to_float4 result_float4
+param_connect simple_oscilloscope data_in input_visualization_listener wave
+param_connect screen0 screen simple_oscilloscope render_out
+param_connect 4float_to_float4 floatd float_dummy result_float
+param_connect 4float_to_float4 floatc input_visualization_listener octaves_r_0
+param_connect 4float_to_float4 floatb input_visualization_listener octaves_l_0
+param_connect 4float_to_float4 floata float_dummy result_float

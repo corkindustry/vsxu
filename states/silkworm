@@ -1,0 +1,89 @@
+meta_set fHx8fHw=
+component_create maths;converters;3float_to_float3 3float_to_float3 -0.113229 -0.045856
+component_create maths;converters;4float_to_float4 4float_to_float4 -0.390311 0.118371
+param_set 4float_to_float4 floata -4.81241941452026370000
+component_create particlesystems;generators;basic_spray_emitter basic_spray_emitter -0.308712 0.110942
+param_set basic_spray_emitter num_particles 199.99998474121094000000
+component_create particlesystems;modifiers;basic_wind_deformer basic_wind_deformer -0.218924 0.069840
+param_set basic_wind_deformer wind 1.00000000000000000000,0.48778510093688965000,0.00000000000022980210
+component_create renderers;opengl_modifiers;blend_mode blend_mode 0.155021 0.086927
+param_set blend_mode dest_blend 6
+component_create texture;particles;blob blob -0.282519 -0.037180
+param_set blob arms 3.24691891670227050000
+param_set blob attenuation 1.31794106960296630000
+param_set blob alpha 1
+param_set blob star_flower 1.74062490463256840000
+component_create texture;particles;blob blob_1 -0.049445 -0.102568
+param_set blob_1 arms 0.00000998117775452556
+param_set blob_1 attenuation 9.99999046325683590000
+param_set blob_1 size 7
+param_set blob_1 alpha 1
+param_set blob_1 star_flower 0.00634460709989070890
+param_set blob_1 angle 0.00000864774665387813
+macro_create empty -0.550021 -0.250289 0.100000
+component_create maths;converters;4float_to_float4 empty.4float_to_float4_1 0.022734 0.014860
+component_create maths;oscillators;pulse_oscillator empty.pulse_oscillator -0.026006 0.028719
+param_set empty.pulse_oscillator trigger 9.99999046325683590000
+param_set empty.pulse_oscillator fade_speed 0.01001070067286491400
+component_create maths;oscillators;pulse_oscillator empty.pulse_oscillator_1 -0.023798 -0.001131
+param_set empty.pulse_oscillator_1 trigger 9.99999046325683590000
+param_set empty.pulse_oscillator_1 fade_speed 0.02001034095883369400
+component_create maths;oscillators;pulse_oscillator empty.pulse_oscillator_1_1 -0.016632 -0.022631
+param_set empty.pulse_oscillator_1_1 trigger 9.99999046325683590000
+param_set empty.pulse_oscillator_1_1 fade_speed 0.03001067973673343700
+component_create maths;accumulators;float_accumulator_limits float_accumulator_limits -0.030949 -0.171242
+param_set float_accumulator_limits float_in 0.00050037680193781853
+param_set float_accumulator_limits limit_lower 0.09999106079339981100
+param_set float_accumulator_limits limit_upper 5.99999046325683590000
+component_create sound;input_visualization_listener input_visualization_listener -0.405483 0.046888
+param_set input_visualization_listener quality 1
+param_set input_visualization_listener multiplier 200.00000000000000000000
+component_create renderers;mesh;mesh_basic_render mesh_basic_render -0.137277 0.034359
+param_set mesh_basic_render vertex_colors 1
+param_set mesh_basic_render particles_size_center 1
+component_create mesh;particles;mesh_disc mesh_disc -0.320790 0.027780
+component_create renderers;opengl_modifiers;cameras;orbit_camera orbit_camera 0.048751 0.014383
+param_set orbit_camera distance 0.52178090810775757000
+component_create maths;oscillators;oscillator oscillator -0.464133 0.112574
+param_set oscillator amp 5.49998998641967770000
+component_create maths;oscillators;oscillator oscillator_1 -0.473021 0.109453
+param_set oscillator_1 amp 6.99999141693115230000
+cpp screen0 0.220933 0.009705
+param_set screen0 gamma_correction 1.00000095367431640000
+param_set screen0 clear_color 0.00000046420717580986,0.00000077531802844533,0.00000096349174327770,1.00000000000000000000
+component_create particlesystems;modifiers;size_noise size_noise -0.263168 0.084834
+param_set size_noise strength 9.99999141693115230000
+param_set size_noise size_type 1
+component_create renderers;basic;textured_rectangle textured_rectangle 0.045712 -0.042305
+param_set textured_rectangle facing_camera 1
+param_set textured_rectangle position 0.00000095291153456856,0.00000000000000000000,0.00000000000000000000
+break
+param_alias alias_result1_2:float 1 empty alias_result1_2 empty.pulse_oscillator_1_1 result1
+param_alias alias_result1_1:float 1 empty alias_result1_1 empty.pulse_oscillator_1 result1
+param_alias alias_result1:float 1 empty alias_result1 empty.pulse_oscillator result1
+param_alias alias_result_float4:float4 1 empty alias_result_float4 empty.4float_to_float4_1 result_float4
+break
+param_connect textured_rectangle texture_in blob_1 texture
+param_connect textured_rectangle size float_accumulator_limits result_float
+param_connect size_noise in_particlesystem basic_spray_emitter particlesystem
+param_connect screen0 screen blend_mode render_out
+param_connect orbit_camera render_in mesh_basic_render render_out
+param_connect orbit_camera rotation 3float_to_float3 result_float3
+param_connect mesh_basic_render particles basic_wind_deformer particlesystem
+param_connect mesh_basic_render mesh_in mesh_disc mesh
+param_connect mesh_basic_render tex_a blob texture
+param_connect empty.4float_to_float4_1 floatc empty.pulse_oscillator_1_1 result1
+param_connect empty.4float_to_float4_1 floatb empty.pulse_oscillator_1 result1
+param_connect empty.4float_to_float4_1 floata empty.pulse_oscillator result1
+param_connect blob_1 color empty alias_result_float4
+param_connect blob color empty alias_result_float4
+param_connect blend_mode render_in orbit_camera render_out
+param_connect blend_mode render_in textured_rectangle render_out
+param_connect basic_wind_deformer in_particlesystem size_noise particlesystem
+param_connect basic_spray_emitter particles_per_second input_visualization_listener vu_l
+param_connect basic_spray_emitter color 4float_to_float4 result_float4
+param_connect 4float_to_float4 floatc oscillator_1 float
+param_connect 4float_to_float4 floatb oscillator float
+param_connect 3float_to_float3 floatc empty alias_result1_2
+param_connect 3float_to_float3 floatb empty alias_result1_1
+param_connect 3float_to_float3 floata empty alias_result1
